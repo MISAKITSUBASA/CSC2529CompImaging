@@ -1,7 +1,6 @@
 import argparse
 import cv2
 import face_detection
-import imutils
 import os
 
 # construct the argument parser and parse the arguments
@@ -40,7 +39,7 @@ def save_face_clips(frame, bboxes):
             img_path = os.path.join(save_dir, f"face_{img_counter}_frame_{frame_counter}@3_x0_{x0}_y0_{y0}_x1_{x1}_y1_{y1}.jpg")
             cv2.imwrite(img_path, face_img)
             img_counter += 1
-            # Optionally, draw rectangle on face (can be removed if not needed)
+            # draw rectangle on face
             cv2.rectangle(frame, (x0, y0), (x1, y1), (0, 0, 255), 2)
         except:
             pass

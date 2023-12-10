@@ -14,11 +14,15 @@ import matplotlib.patches as patches
 resnet_architecture = Architecture.ResNet152  
 backbone = ResNetBackbone(resnet_architecture)
 
+# OLD not to be used, test purpose only.
+
 # Initialize the Faster R-CNN model with the VGG16 backbone
 # Make sure to use the correct number of classes as used during training
 num_classes = 6 # This is an example, replace with the actual number of classes
 
 model = FasterRCNNModel(num_classes=num_classes, backbone=backbone)
+
+# load check point
 checkpoint = torch.load('fasterrcnn_pytorch_resnet152.pth')
 class_index_to_name = {
     0: "background",
@@ -27,23 +31,21 @@ class_index_to_name = {
     3: 'Jennifer Aniston', 
     4: 'Matt LeBlanc', 
     5: 'lisa Kudrow'}
-  
+
+# load model to check point
 if 'model_state_dict' in checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])
 else:
-    # If not, try loading the entire checkpoint as the model state dict
     model.load_state_dict(checkpoint)
-    
     
 model.eval()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
-# Define the transformation
+
 # Define the transformation
 transform = transforms.Compose([
-    transforms.ToTensor(),  # Convert the image to a PyTorch tensor
-    # Add any other transformations that were used during training
+    transforms.ToTensor(),
 ])
 
 # Load and transform the image

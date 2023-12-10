@@ -45,7 +45,6 @@ if __name__ == "__main__":
             break
         
         
-        
         key = cv2.waitKey(1)
         if key == ord('q'):
             break

@@ -39,8 +39,7 @@ def ensure_directory_exists(directory):
 output_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\Layout_small_data_balanced_eyeclosed'  # Define the output directory
 ensure_directory_exists(output_directory)  # Create the directory if it doesn't exist
 
-# Example usage
-base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\train'  # Replace with your dataset path
+base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\train'  # Replace with dataset path
 datas = read_data(base_directory)
 
 output_file = os.path.join(output_directory,'train.txt')   # Output file path
@@ -48,7 +47,7 @@ with open(output_file, 'w') as f:
     for frame_number, data in datas.items():
         f.write(f'{frame_number}\n')
             
-train_val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\trainval'  # Replace with your dataset path
+train_val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\trainval'  # Replace with dataset path
 train_val_data = read_data(train_val_base_directory)
 output_file = os.path.join(output_directory,'trainval.txt')   # Output file path
 
@@ -56,14 +55,14 @@ with open(output_file, 'w') as f:
     for frame_number, data in train_val_data.items():
         f.write(f'{frame_number}\n')
         
-test_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\test'  # Replace with your dataset path
+test_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\test'  # Replace with dataset path
 test_data = read_data(test_base_directory)
 output_file = os.path.join(output_directory,'test.txt')   # Output file path
 with open(output_file, 'w') as f:
     for frame_number, data in test_data.items():
         f.write(f'{frame_number}\n')
         
-val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\val'  # Replace with your dataset path
+val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\val'  # Replace with dataset path
 val_data = read_data(val_base_directory)
 output_file = os.path.join(output_directory,'val.txt')   # Output file path
 with open(output_file, 'w') as f:

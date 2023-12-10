@@ -5,7 +5,6 @@ import cv2
 from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
 
-# Assuming the following modules are in the same directory or are properly installed
 from YCbCr_brightness import adjust_brightness_ycbcr
 from pseudo_hdr import pseudo_hdr_effect
 

@@ -5,7 +5,6 @@
 #
 # Image loading and pre-processing.
 #
-from datetime import datetime
 from dataclasses import dataclass
 from enum import Enum
 import imageio
@@ -13,14 +12,12 @@ from PIL import Image
 import numpy as np
 from typing import List
 import numpy as np
-from skimage.filters import gaussian
 from YCbCr_brightness import adjust_brightness_ycbcr
 import cv2
 from pseudo_hdr import pseudo_hdr_effect
 import imageio
 from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
-from NLM import non_local_means_denoising
 class ChannelOrder(Enum):
   RGB = "RGB"
   BGR = "BGR"
@@ -63,8 +60,6 @@ def _preprocess_vgg16(image_data, preprocessing):
   image_data = image_data.transpose([2, 0, 1])  # (height,width,3) -> (3,height,width)
   return image_data.copy()                      # copy required to eliminate negative stride (which Torch doesn't like)
 
-
-# TODO: None local mean:
   
 def load_image(url, preprocessing, min_dimension_pixels = None, horizontal_flip = False):
   """
@@ -173,7 +168,7 @@ def apply_color_balance(image):
   
   
 def load_image_API(image, preprocessing, min_dimension_pixels = None, horizontal_flip = False):
-  # # edited by us
+  # # created by us
   if not cv2.cuda.getCudaEnabledDeviceCount():
         raise RuntimeError("CUDA device not available. Ensure you have a CUDA-enabled GPU and OpenCV is built with CUDA support.")
   

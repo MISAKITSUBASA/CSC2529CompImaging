@@ -1,7 +1,5 @@
 import numpy as np
-import imageio
-from PIL import Image
-
+# self implemented, but very s
 def non_local_means_denoising(image, h=10, patch_size=3, search_window=21):
     pad_width = search_window // 2
     padded_image = np.pad(image, pad_width, mode='reflect')

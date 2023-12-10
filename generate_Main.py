@@ -27,7 +27,7 @@ def ensure_directory_exists(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\train'  # Replace with your dataset path
+base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\train'  # Replace with dataset path
 datas = read_data(base_directory)
 
 output_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\Main_small_data_balanced_eyeclosed'  # Define the output directory
@@ -42,7 +42,7 @@ for name, frames in datas.items():
             
             
             
-trainval_data_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\trainval'  # Replace with your dataset path
+trainval_data_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\trainval'  # Replace with dataset path
 trainval_datas = read_data(trainval_data_base_directory)
 
 for name, frames in trainval_datas.items():
@@ -55,7 +55,7 @@ for name, frames in trainval_datas.items():
             
             
             
-test_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\test'  # Replace with your dataset path
+test_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\test'  # Replace with dataset path
 test_data = read_data(test_base_directory)
 output_file = 'test.txt'  # Output file path
 
@@ -66,7 +66,7 @@ for name, frames in test_data.items():
         for fram in frames:
             f.write(f'{fram}\n')
         
-val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\val'  # Replace with your dataset path
+val_base_directory = 'small_data_set_balanced_closed_eye_removed_balanced\\val'  # Replace with dataset path
 val_data = read_data(val_base_directory)
 output_file = 'val.txt'  # Output file path
 

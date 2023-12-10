@@ -1,16 +1,9 @@
 import xml.etree.ElementTree as ET
-import argparse
-import cv2
-import face_detection
 import os
-import numpy as np
-import tensorflow as tf
-from tensorflow.keras.preprocessing import image
 
 def parse_filename(filename):
     # Splitting the filename to extract the necessary information
     parts = filename.split('_')
-    # print(parts)
     frame_number = parts[3]
     x0 =int(parts[5])
     y0 = int(parts[7])
@@ -38,14 +31,8 @@ def read_data(base_directory):
 
     return data_dict
 
-# Example usage
-base_directory = 'D:\\DSFD-Pytorch-Inference-1\\data\\actors'  # Replace with your dataset path
+base_directory = 'D:\\DSFD-Pytorch-Inference-1\\data\\actors'  # Replace with dataset path
 data = read_data(base_directory)
-
-print(data)
-
-import os
-import xml.etree.ElementTree as ET
 
 def create_xml_file(frame_number, objects, output_folder):
     annotation = ET.Element("annotation")
@@ -56,12 +43,9 @@ def create_xml_file(frame_number, objects, output_folder):
     print(frame_number)
     filename.text = f"{frame_number}.jpg"
 
-    # Add other static information here (source, owner, etc.)
-    # ...
-
     size = ET.SubElement(annotation, "size")
-    ET.SubElement(size, "width").text = "1280"  # Replace with actual width if known
-    ET.SubElement(size, "height").text = "720"  # Replace with actual height if known
+    ET.SubElement(size, "width").text = "1280"  
+    ET.SubElement(size, "height").text = "720"  
     ET.SubElement(size, "depth").text = "3"
 
     ET.SubElement(annotation, "segmented").text = "0"
@@ -69,8 +53,7 @@ def create_xml_file(frame_number, objects, output_folder):
     # Create an object element for each object
     for obj in objects:
         object_elem = ET.SubElement(annotation, "object")
-        ET.SubElement(object_elem, "name").text = obj[4]  # Name from your data
-        # Add other elements like pose, truncated, difficult if needed
+        ET.SubElement(object_elem, "name").text = obj[4]  
         ET.SubElement(object_elem, "difficult").text = "1"
         bndbox = ET.SubElement(object_elem, "bndbox")
         ET.SubElement(bndbox, "xmin").text = str(obj[0])

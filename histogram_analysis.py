@@ -19,6 +19,5 @@ def plot_image_histogram(url):
     plt.grid(True)
     plt.show()
 
-# Use the function
-url = "VOCdevkit\\VOC2007\\JPEGImages\\1938.jpg"  # Replace with your image path
+url = "VOCdevkit\\VOC2007\\JPEGImages\\1938.jpg"
 plot_image_histogram(url)

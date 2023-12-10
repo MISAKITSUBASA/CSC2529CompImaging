@@ -7,14 +7,14 @@ image = cv2.imread('833e5b65544e282ce5757cfc3eba73d.png', cv2.IMREAD_GRAYSCALE)
 # Calculate the current average brightness
 current_brightness = np.mean(image)
 
-# Define your target brightness level (0-255 for 8-bit images)
-target_brightness = 150  # for example
+# Define target brightness level
+target_brightness = 150
 
 # Calculate the scaling factor
 scaling_factor = target_brightness / current_brightness
 
 # Scale the pixel values to reach the desired brightness level
-# Clip the values to ensure they remain in the 8-bit range [0, 255]
+# Clip the values to ensure they remain in [0, 255]
 rescaled_image = np.clip(image * scaling_factor, 0, 255).astype(np.uint8)
 
 # If the original image is in color, we need to apply the same scaling to all channels
