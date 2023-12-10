@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
         # Since PIL uses RGB and OpenCV uses BGR, we need to convert the color space
         # frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-        cv2.imshow('img',frame)
+        # cv2.imshow('img',frame)
         # if the video writer is None *AND* we are supposed to write
         # the output video to disk initialize the writer
         
