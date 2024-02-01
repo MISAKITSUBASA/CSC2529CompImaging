@@ -59,5 +59,8 @@ python .\generate_labeled_movie.py --output PATH_OF_OUTPUT_FILE_NAME  --predict 
 IF you can not run the script you can watch the sample output we have.
 ## Limitation
 limited to the Friends theories. 
-## Our Poster
-![plot](Poster.pdf)
+## My Poster
+[Our Poster](Poster.pdf)
+
+## My Paper
+[My Paper](Dynamic_Recognition__Extending_Faster_RCNN_Capabilities_for_Facial_Identification_in_Media_Stream (2).pdf)
