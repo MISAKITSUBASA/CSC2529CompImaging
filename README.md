@@ -63,4 +63,4 @@ limited to the Friends theories.
 [Our Poster](Poster.pdf)
 
 ## My Paper
-[My Paper](Dynamic_Recognition__Extending_Faster_RCNN_Capabilities_for_Facial_Identification_in_Media_Stream(2).pdf)
+[My Paper](Dynamic_Recognition__Extending_Faster_RCNN_Capabilities_for_Facial_Identification_in_Media_Stream.pdf)
