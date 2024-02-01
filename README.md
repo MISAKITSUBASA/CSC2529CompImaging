@@ -59,5 +59,5 @@ python .\generate_labeled_movie.py --output PATH_OF_OUTPUT_FILE_NAME  --predict 
 IF you can not run the script you can watch the sample output we have.
 ## Limitation
 limited to the Friends theories. 
-
-![plot](Poster.jpg)
+## Our Poster
+![plot](Poster.pdf)
